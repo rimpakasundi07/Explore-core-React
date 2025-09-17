@@ -30,12 +30,26 @@
 
 // condition ? true : false
 
+// export default function ToDo({ task, isDone, time = 0 }) {
+//   return isDone ? (
+//     <li>
+//       Done : {task} time: {time}{" "}
+//     </li>
+//   ) : (
+//     <li>Not Done: {task} </li>
+//   );
+// }
+
+// ------------------------------------------->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+// ---------------------  CONDITIONAL RENDERING  :  OPTION 4 &&
+
 export default function ToDo({ task, isDone, time = 0 }) {
-  return isDone ? (
-    <li>
-      Done : {task} time: {time}{" "}
-    </li>
-  ) : (
-    <li>Not Done: {task} </li>
+  return (
+    isDone && (
+      <li>
+        Done Task : {task} time:{time}
+      </li>
+    )
   );
 }
