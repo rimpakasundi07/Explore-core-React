@@ -3,6 +3,8 @@
 //   return <li>Task:{task} </li>;
 // }
 
+// ---------------------->>>>>>>>>>>>>>>
+
 // export default function ToDo({ task, isDone }) {
 //   if (isDone === true) {
 //     return <li>Done : {task}</li>;
@@ -58,12 +60,34 @@
 
 //---------------------  CONDITIONAL RENDERING  :  OPTION 5 ||
 
-export default function ToDo({ task, isDone, time = 0 }) {
-  return (
-    isDone || (
+// export default function ToDo({ task, isDone, time = 0 }) {
+//   return (
+//     isDone || (
+//       <li>
+//         Not Done Task : {task} time: {time}
+//       </li>
+//     )
+//   );
+// }
+
+// -------------------------------------------------------------------------------------->>
+//---------------------  CONDITIONAL RENDERING  :  OPTION 6 use variable
+export default function ToDo({ task, isDone, time }) {
+  const displayTime = time ? time : 100;
+  let listItem;
+
+  if (isDone === true) {
+    listItem = (
       <li>
-        Not Done Task : {task} time: {time}
+        Done: {task} time: {displayTime}
       </li>
-    )
-  );
+    );
+  } else {
+    return (
+      <li>
+        Pending: {task} time:{displayTime}
+      </li>
+    );
+  }
+  return listItem;
 }
