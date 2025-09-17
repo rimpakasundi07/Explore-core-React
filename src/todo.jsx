@@ -44,11 +44,25 @@
 
 // ---------------------  CONDITIONAL RENDERING  :  OPTION 4 &&
 
+// export default function ToDo({ task, isDone, time = 0 }) {
+//   return (
+//     isDone && (
+//       <li>
+//         Done Task : {task} time:{time}
+//       </li>
+//     )
+//   );
+// }
+
+// -------------------------------------------------------------------------------------->>
+
+//---------------------  CONDITIONAL RENDERING  :  OPTION 5 ||
+
 export default function ToDo({ task, isDone, time = 0 }) {
   return (
-    isDone && (
+    isDone || (
       <li>
-        Done Task : {task} time:{time}
+        Not Done Task : {task} time: {time}
       </li>
     )
   );
