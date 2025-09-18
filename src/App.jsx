@@ -1,13 +1,25 @@
 import "./App.css";
 import ToDo from "./todo";
 import Actor from "./actor";
+import Singer from "./singer";
 
 function App() {
   const actors = ["Rohit Raj", "Mou Roy", "salima sekh"];
+
+  const singers = [
+    { id: 1, name: "Dr. Rohit Sen", age: 45 },
+    { id: 2, name: "Tarzan Mollik", age: 50 },
+    { id: 3, name: "Monami DAS", age: 52 },
+  ];
   // const time = 50;
   return (
     <>
       <h1> React Core Concepts</h1>
+
+      {singers.map((singer) => (
+        <Singer key={singer.id} singer={singer}></Singer>
+      ))}
+
       {actors.map((actor) => (
         <Actor actor={actor}> </Actor>
       ))}
